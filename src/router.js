@@ -4,6 +4,7 @@ import Home from "./components/Views/Home";
 
 import Login from "./components/Views/Login";
 import ToDoList from "./components/Views/ToDoList";
+import Settings from "./components/Views/Settings";
 
 Vue.use(VueRouter);
 
@@ -11,7 +12,8 @@ Vue.use(VueRouter);
 const routes = [
     {path: '/home', component: Home},
     {path: '/login', component: Login},
-    {path: '/todo', component: ToDoList}
+    {path: '/todo', component: ToDoList},
+    {path: '/settings', component: Settings}
 ];
 
 
