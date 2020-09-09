@@ -23,21 +23,23 @@
                 </thead>
                 <tbody>
                   <tr v-for="item in desserts" :key="item.name">
-                    <v-checkbox v-model="checkbox"></v-checkbox>
+                    <td>
+                      <v-checkbox v-model="checkbox"></v-checkbox>
+                    </td>
                     <td>{{ item.name }}</td>
-                    <td>{{ item.calories }}</td>
-                    <v-btn text>
-                      <v-icon>mdi-check</v-icon>
-                    </v-btn>
-                    <v-btn text>
-                      <v-icon>mdi-close</v-icon>
-                    </v-btn>
+                    <td>{{ item.statusBoolean }}</td>
+                    <td>
+                      <v-btn text>
+                        <v-icon>mdi-check</v-icon>
+                      </v-btn>
+                      <v-btn text>
+                        <v-icon>mdi-close</v-icon>
+                      </v-btn>
+                    </td>
                   </tr>
                 </tbody>
               </template>
             </v-simple-table>
-
-           
           </v-card>
         </v-col>
         <v-col xs="12" sm="6" md="3">
@@ -61,15 +63,15 @@ export default {
       desserts: [
         {
           name: "Spüli",
-          calories: false,
+          statusBoolean: false,
         },
         {
           name: "Müllsäcke",
-          calories: false,
+          statusBoolean: false,
         },
         {
           name: "Ingwerbröd",
-          calories: false,
+          statusBoolean: false,
         },
       ],
     };
