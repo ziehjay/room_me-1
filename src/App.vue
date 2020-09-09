@@ -9,7 +9,7 @@
                 dark
         >
             <v-list dense>
-                <v-list-item to="/Home">
+                <v-list-item to="/home">
                     <v-list-item-action>
                         <v-icon>mdi-home</v-icon>
                     </v-list-item-action>
@@ -19,7 +19,7 @@
                 </v-list-item>
 
 
-                <v-list-item to="/MeineWG">
+                <v-list-item to="/meineWG">
                     <v-list-item-action>
                         <v-icon>mdi-account-switch</v-icon>
                     </v-list-item-action>
@@ -29,7 +29,7 @@
                 </v-list-item>
 
 
-                <v-list-item to="/Einkaufen">
+                <v-list-item to="/einkaufen">
                     <v-list-item-action>
                         <v-icon>mdi-shopping</v-icon>
                     </v-list-item-action>
@@ -39,7 +39,7 @@
                 </v-list-item>
 
 
-                <v-list-item to="/Cleaning">
+                <v-list-item to="/putzen">
                     <v-list-item-action>
                         <v-icon>mdi-broom</v-icon>
                     </v-list-item-action>
@@ -48,7 +48,7 @@
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item to="/Settings">
+                <v-list-item to="/settings">
                     <v-list-item-action>
                         <v-icon>mdi-account</v-icon>
                     </v-list-item-action>
@@ -57,7 +57,7 @@
                     </v-list-item-content>
                 </v-list-item>
 
-                <v-list-item to="/Todo">
+                <v-list-item to="/todo">
                     <v-list-item-action>
                         <v-icon>mdi-pencil</v-icon>
                     </v-list-item-action>

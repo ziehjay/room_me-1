@@ -14,6 +14,7 @@ Vue.use(VueRouter);
 // Router lädt die Elemente in den Contentbereich von App
 const routes = [
     {path: '/meineWG', component: AboutWGPage},
+    {path: '/', component: Home},
     {path: '/home', component: Home},
     {path: '/login', component: Login},
     {path: '/einkaufen', component: PurchasingPage},
