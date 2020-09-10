@@ -28,6 +28,7 @@
                       <v-btn text>
                         <v-icon>mdi-close</v-icon>
                       </v-btn>
+                      
                     </td>
                   </tr>
                 </tbody>
