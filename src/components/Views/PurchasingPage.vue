@@ -15,7 +15,7 @@
                     <th class="text-left">Ablehnen</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody :class="`pl-3 shoppingList ${shoppingList.status}`">
                   <tr v-for="item in shoppingList" :key="item.articleName">
                     <td>{{ item.articleName }}</td>
                     <td>{{ item.statusBoolean }}</td>
@@ -28,7 +28,6 @@
                       <v-btn text>
                         <v-icon>mdi-close</v-icon>
                       </v-btn>
-                      
                     </td>
                   </tr>
                 </tbody>
@@ -59,6 +58,7 @@
                     <v-list-item-content>
                       <v-list-item-title>{{ item.username }}</v-list-item-title>
                       <v-list-item-subtitle>{{ item.balance }}</v-list-item-subtitle>
+                      <v-divider class="mx-1" horizontal color="pink"></v-divider>
                     </v-list-item-content>
                   </v-list-item>
                 </v-list>
@@ -66,25 +66,32 @@
             </v-list-item>
           </v-card>
         </v-col>
+
         <v-col xs="12" sm="6" md="3">
-          <v-card elevation="24" max-width="444" class="mx-auto">
-            <v-system-bar lights-on>Erledigt</v-system-bar>
-            <v-carousel
-              :continuous="false"
-              :cycle="cycle"
-              :show-arrows="true"
-              hide-delimiter-background
-              height="250"
-            >
-              <v-carousel-item v-for="(slide, i) in slides" :key="i">
-              
-                <v-sheet :color="colors[i]" height="100%" tile>
-                  <v-row class="fill-height" align="start" justify="start">
-                    <div class="display-3">{{ slide }} +</div>
-                  </v-row>
-                </v-sheet>
-              </v-carousel-item>
-            </v-carousel>
+          <v-card>
+            <v-tabs v-model="tab" background-color="dark" centered dark icons-and-text>
+              <v-tabs-slider></v-tabs-slider>
+
+              <v-tab href="#tab-1">
+                Offen
+                <v-icon color="blue">mdi-heart</v-icon>
+              </v-tab>
+
+              <v-tab href="#tab-2">
+                Erledigt
+                <v-icon color="pink">mdi-heart</v-icon>
+              </v-tab>
+            </v-tabs>
+
+            <v-tabs-items v-model="tab">
+              <v-tab-item v-for="i in 2" :key="i" :value="'tab-' + i"></v-tab-item>
+            </v-tabs-items>
+            <v-card-text v-for="item in openArticleList" :key="item.articleName">
+              <v-chip class="mr-2" @click="lights" outlined color="deep-purple accent-4">
+                <v-icon left>mdi-brightness-5</v-icon>
+                {{ item.articleName }}
+              </v-chip>
+            </v-card-text>
           </v-card>
         </v-col>
       </v-row>
@@ -94,6 +101,17 @@
 
 <script>
 export default {
+  methods: {
+    alarm() {
+      alert("Turning on alarm...");
+    },
+    blinds() {
+      alert("Toggling Blinds...");
+    },
+    lights() {
+      alert("Toggling lights...");
+    },
+  },
   data() {
     return {
       checkbox: true,
@@ -137,10 +155,21 @@ export default {
           balance: "+ " + "02.50" + " €",
         },
       ],
-      colors: [
-        "darkblue",
-   
+      openArticleList: [
+        {
+          articleName: "Atommüll",
+          status: "open",
+        },
+        {
+          articleName: "Kuchen",
+          status: "open",
+        },
+        {
+          articleName: "Kaffee",
+          status: "open",
+        },
       ],
+      colors: ["darkblue"],
       cycle: false,
       slides: ["Uno", "Second", "Third", "Fourth", "Fifth"],
     };
@@ -148,6 +177,8 @@ export default {
 };
 </script>
 
+<style>
+</style>
  <!-- 
 
   <v-row wrap justify-space-around>
